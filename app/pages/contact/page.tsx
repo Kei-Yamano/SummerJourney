@@ -8,7 +8,6 @@ export default function Contact() {
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Contact</h1>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          プロジェクトのご相談、技術的な質問、お仕事のご依頼など、
           お気軽にお問い合わせください。できる限り迅速にご返信いたします。
         </p>
       </div>
@@ -28,11 +27,11 @@ export default function Contact() {
                   href="mailto:contact@natscape.dev"
                   className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300 text-lg"
                 >
-                  contact@natscape.dev
+                  s266318@wakayama-u.ac.jp
                 </a>
               </div>
             </div>
-            <p className="text-slate-600 ml-18 pl-1">お仕事のご依頼やご質問はこちらまで</p>
+            <p className="text-slate-600 ml-18 pl-1">ご連絡はこちらまで</p>
           </div>
 
           <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -41,11 +40,11 @@ export default function Contact() {
                 <Clock className="h-7 w-7 text-green-600" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-1">レスポンス時間</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-1">レスポンス可能時間</h3>
                 <p className="text-green-700 font-medium text-lg">通常24時間以内</p>
               </div>
             </div>
-            <p className="text-slate-600 ml-18 pl-1">営業時間: 平日 9:00 - 18:00 (JST)</p>
+            <p className="text-slate-600 ml-18 pl-1">学生であるため、講義中を除き、24時間対応可能です。</p>
           </div>
 
           <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -55,10 +54,10 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-1">所在地</h3>
-                <p className="text-purple-700 font-medium text-lg">東京都, 日本</p>
+                <p className="text-purple-700 font-medium text-lg">大阪府, 日本</p>
               </div>
             </div>
-            <p className="text-slate-600 ml-18 pl-1">リモートワーク対応可能</p>
+            <p className="text-slate-600 ml-18 pl-1">リモート対応可能</p>
           </div>
 
           {/* Social Links Card */}
@@ -69,13 +68,13 @@ export default function Contact() {
             </h3>
             <div className="grid grid-cols-3 gap-4">
               <a
-                href="#"
+                href="https://github.com/Kei-Yamano"
                 className="flex flex-col items-center gap-2 p-4 bg-white/70 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300"
               >
                 <Github className="h-8 w-8 text-slate-800" />
                 <span className="text-slate-700 font-medium">GitHub</span>
               </a>
-              <a
+              {/*<a
                 href="#"
                 className="flex flex-col items-center gap-2 p-4 bg-white/70 rounded-xl hover:bg-white hover:shadow-md transition-all duration-300"
               >
@@ -88,13 +87,13 @@ export default function Contact() {
               >
                 <Linkedin className="h-8 w-8 text-blue-700" />
                 <span className="text-slate-700 font-medium">LinkedIn</span>
-              </a>
+              </a>*/}
             </div>
           </div>
         </div>
-
+        
         {/* FAQ Section - Enhanced */}
-        <div className="mt-12 bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl shadow-lg">
+        {/*<div className="mt-12 bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl shadow-lg">
           <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">よくある質問</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl border border-blue-100 hover:shadow-md transition-all duration-300">
@@ -122,10 +121,10 @@ export default function Contact() {
               </p>
             </div>
           </div>
-        </div>
+        </div>*/}
 
         {/* Call to Action */}
-        <div className="mt-12 text-center bg-gradient-to-r from-blue-600 to-cyan-600 p-10 rounded-2xl shadow-xl text-white">
+        {/*<div className="mt-12 text-center bg-gradient-to-r from-blue-600 to-cyan-600 p-10 rounded-2xl shadow-xl text-white">
           <h3 className="text-2xl font-bold mb-4">お気軽にご連絡ください</h3>
           <p className="mb-6 max-w-2xl mx-auto">
             プロジェクトのアイデアや技術的な質問など、どんなことでもお気軽にご相談ください。
@@ -138,7 +137,7 @@ export default function Contact() {
             <Mail className="h-5 w-5" />
             メールを送る
           </a>
-        </div>
+        </div>*/}
       </div>
     </div>
   )
