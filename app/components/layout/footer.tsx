@@ -69,7 +69,7 @@ export default function Footer() {
               </div>
             </RippleEffect>
             <p className="text-sm text-gray-300/80">
-              海のように深く、波のように自由な発想で、素晴らしいプロダクトとサービスを提供します。
+              海のように深く、波のように自由な発想で、面白いを探し続ける。
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function Footer() {
             <div className="flex space-x-4 mb-4">
               <RippleEffect rippleColor="rgba(255, 255, 255, 0.3)" intensity="light">
                 <Link
-                  href="#"
+                  href="https://github.com/Kei-Yamano?tab=repositories"
                   className="text-cyan-200/80 hover:text-white transition-all duration-300 hover:scale-110 hover:drop-shadow-sm p-2"
                 >
                   <Github className="h-5 w-5" />

@@ -5,49 +5,52 @@ export default function Product() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "てるてる～Tell Your Tale～",
       description:
-        "モダンな技術スタックを使用したフルスタック EC サイト。ユーザー認証、決済機能、管理画面を含む包括的なソリューション。",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+        "イラストから物語を考える創造力と表現する文章力を養う2人用対戦ゲーム①4枚の画像から物語を創造②相手の物語を読み、元の4枚の画像を推測③その一致率で競いあう【開発担当】:フロントエンド",
+      image: "/teruteruHome.png",
+      technologies: ["unity", "C#"],
       liveUrl: "#",
       githubUrl: "#",
-      date: "2024年1月",
+      date: "2023年7月-8月",
       featured: true,
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "チーム向けのタスク管理アプリケーション。リアルタイム同期、ドラッグ&ドロップ、進捗追跡機能を実装。",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+      title: "テキストコミュニケーションにおける褒め方の上手さを推定するモデルの精度分析",
+      description:
+        "自己肯定感の低下問題に対して，テキスト対話上での褒め方支援に注目した研究褒め方の上手さを推定するモデルを構築し，その推定精度を分析【結果】対面での褒めを対象にした先行モデルには及ばず。",
+      image: "/digital.png",
+      technologies: ["Python3"],
       liveUrl: "#",
       githubUrl: "#",
-      date: "2023年11月",
+      date: "2024年8月-2025年2月",
       featured: true,
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "美しい UI を持つ天気予報ダッシュボード。複数都市の天気情報、グラフ表示、レスポンシブデザイン。",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Vue.js", "Chart.js", "OpenWeather API"],
+      title: "PUMP -PopUp Memo Pad-",
+      description:
+        "検索支援およびメモ機能を追加したgoogleの拡張機能①検索したページにメモと必要かどうかを残す②次回検索以降, タイトルを見るだけで必要かわかる③タイトルにカーソルを添えるとメモ内容が表示 主な担当:メモ入力ウィンドウに関するアルゴリズムとUI",
+      image: "/pump.png",
+      technologies: ["HTML", "CSS", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
-      date: "2023年9月",
+      date: "2025年2月",
       featured: false,
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "アニメーションとインタラクティブな要素を含むポートフォリオサイト。パフォーマンス最適化とSEO対応。",
-      image: "/placeholder.svg?height=300&width=400",
-      technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
+      title: "ヒッタンセーブ",
+      description:
+        "2人同時対戦の落ちもの×射的ゲーム, ワニと溺れている人の2種類のオブジェクト, それぞれに対応したアイテムでクリックする必要あり, また逆転要素にジャンケンイベントを用意",
+      image: "/HitAndSave.png",
+      technologies: ["Java"],
       liveUrl: "#",
       githubUrl: "#",
       date: "2023年7月",
       featured: false,
-    },
+    } /*
     {
       id: 5,
       title: "Blog Platform",
@@ -69,7 +72,7 @@ export default function Product() {
       githubUrl: "#",
       date: "2023年3月",
       featured: false,
-    },
+    },*/,
   ]
 
   const featuredProjects = projects.filter((project) => project.featured)
@@ -82,7 +85,7 @@ export default function Product() {
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Products</h1>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          これまでに開発した制作物をご紹介します。各プロジェクトは異なる技術スタックと課題解決アプローチを採用しています。
+          これまでに開発した制作物・研究成果を紹介します。
         </p>
       </div>
 
@@ -124,6 +127,7 @@ export default function Product() {
                   ))}
                 </div>
 
+                {/*
                 <div className="flex gap-4">
                   <a
                     href={project.liveUrl}
@@ -140,6 +144,7 @@ export default function Product() {
                     Code
                   </a>
                 </div>
+                */}
               </div>
             </div>
           ))}
@@ -185,6 +190,7 @@ export default function Product() {
                   )}
                 </div>
 
+                {/*
                 <div className="flex gap-2">
                   <a
                     href={project.liveUrl}
@@ -201,6 +207,7 @@ export default function Product() {
                     Code
                   </a>
                 </div>
+                */}
               </div>
             </div>
           ))}

@@ -159,10 +159,7 @@ export default function Home() {
                 山野 夏です。格ゲーマです。
               </p>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                コマンドを覚えることに情熱を持つエンジニア志望の大学生です。
-                Next.jsやReactを使ったウェブアプリケーション開発を始めてみようかと思いかけています。
-                このポートフォリオサイトでは、私の経歴やスキル、制作物などを紹介しようと思っています。
-                お気軽にご連絡ください！
+                コマンドを覚えることに情熱を持つエンジニア志望の大学生です。Next.jsやReactを使ったウェブアプリケーション開発に興味をもち、このポートフォリオサイトを通じて自分の経歴やスキル、制作物を紹介しています。自身の面白いを表現し続けるために、学び続けています。
               </p>
             </div>
 
@@ -203,9 +200,9 @@ export default function Home() {
                 <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto">
                   <span className="text-white text-2xl">🚀</span>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-800">革新的な技術</h4>
+                <h4 className="text-lg font-semibold text-slate-800">共感性の持った企画立案</h4>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  最新技術を活用し、常に進化し続けるソリューションを提供
+                  課題に対して、自分事としての視点を忘れず、企画立案・要件定義から携わる人材になりたい。
                 </p>
               </div>
             </RippleEffect>
@@ -214,9 +211,9 @@ export default function Home() {
                 <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto">
                   <span className="text-white text-2xl">🎨</span>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-800">デザイン思考</h4>
+                <h4 className="text-lg font-semibold text-slate-800">面白いを探し続けられる場所で生きたい。</h4>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  ユーザー中心のデザインで、直感的で美しいインターフェースを創造
+                  業界に関わらず、面白いと感じる部分を大切にしたい。
                 </p>
               </div>
             </RippleEffect>
@@ -225,8 +222,8 @@ export default function Home() {
                 <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto">
                   <span className="text-white text-2xl">🌱</span>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-800">持続的成長</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">継続的な学習と改善により、長期的な価値を創出</p>
+                <h4 className="text-lg font-semibold text-slate-800">チームと一緒に</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">共感性の持った面白さを追求するため、本当の主張ができるチーム開発に取り組みたい。</p>
               </div>
             </RippleEffect>
           </div>
