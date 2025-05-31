@@ -1,150 +1,158 @@
-import { Calendar, Clock, Tag, ExternalLink, BookOpen } from "lucide-react"
-import Image from "next/image"
+import { BookOpen } from "lucide-react"
 
 export default function Article() {
-  const articles = [
-    {
-      id: 1,
-      title: "Next.js 14 の新機能とパフォーマンス最適化",
-      excerpt:
-        "Next.js 14 で導入された新機能と、実際のプロジェクトでのパフォーマンス最適化手法について詳しく解説します。",
-      date: "2024年2月15日",
-      readTime: "8分",
-      tags: ["Next.js", "React", "パフォーマンス"],
-      platform: "Qiita",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: true,
-      category: "技術",
-    },
-    {
-      id: 2,
-      title: "格闘ゲームから学ぶプログラミングの思考法",
-      excerpt: "格闘ゲームのコマンド入力や戦略的思考が、プログラミングスキルの向上にどのように役立つかを考察します。",
-      date: "2024年2月10日",
-      readTime: "6分",
-      tags: ["格闘ゲーム", "思考法", "プログラミング"],
-      platform: "個人ブログ",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: true,
-      category: "趣味",
-    },
-    {
-      id: 3,
-      title: "TypeScript で型安全な React アプリケーション開発",
-      excerpt:
-        "TypeScript を使用した React アプリケーション開発のベストプラクティスと、型安全性を保つためのテクニックを紹介。",
-      date: "2024年1月28日",
-      readTime: "12分",
-      tags: ["TypeScript", "React", "型安全性"],
-      platform: "Zenn",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: false,
-      category: "技術",
-    },
-    {
-      id: 4,
-      title: "漫画から学ぶストーリーテリングとUI設計",
-      excerpt: "漫画の構成やキャラクター設計から、ユーザーインターフェース設計に活かせる要素を探ります。",
-      date: "2024年1月20日",
-      readTime: "7分",
-      tags: ["漫画", "UI設計", "ストーリーテリング"],
-      platform: "個人ブログ",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: false,
-      category: "趣味",
-    },
-    {
-      id: 5,
-      title: "CSS Grid と Flexbox の使い分けガイド",
-      excerpt: "CSS Grid と Flexbox の特徴を理解し、適切な場面での使い分け方法を実例とともに解説します。",
-      date: "2024年1月10日",
-      readTime: "6分",
-      tags: ["CSS", "レイアウト", "フロントエンド"],
-      platform: "Qiita",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: false,
-      category: "技術",
-    },
-    {
-      id: 6,
-      title: "サッカー観戦で身につくチーム開発の視点",
-      excerpt: "サッカーの戦術分析から学ぶ、効果的なチーム開発とコミュニケーションの手法について。",
-      date: "2024年1月5日",
-      readTime: "5分",
-      tags: ["サッカー", "チーム開発", "コミュニケーション"],
-      platform: "個人ブログ",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: false,
-      category: "趣味",
-    },
-    {
-      id: 7,
-      title: "React Hooks の効果的な使い方",
-      excerpt: "useState、useEffect を始めとする React Hooks の効果的な使い方と、カスタムフックの作成方法について。",
-      date: "2023年12月20日",
-      readTime: "10分",
-      tags: ["React", "Hooks", "JavaScript"],
-      platform: "Zenn",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: false,
-      category: "技術",
-    },
-    {
-      id: 8,
-      title: "カラオケで鍛える表現力とプレゼンテーション",
-      excerpt: "カラオケでの歌唱体験が、技術プレゼンテーションや表現力向上にどう活かせるかを考察。",
-      date: "2023年12月15日",
-      readTime: "4分",
-      tags: ["カラオケ", "プレゼンテーション", "表現力"],
-      platform: "個人ブログ",
-      url: "#",
-      image: "/placeholder.svg?height=200&width=300",
-      featured: false,
-      category: "趣味",
-    },
-  ]
-
-  const featuredArticles = articles.filter((article) => article.featured)
-  const techArticles = articles.filter((article) => article.category === "技術" && !article.featured)
-  const hobbyArticles = articles.filter((article) => article.category === "趣味" && !article.featured)
-
-  const getPlatformColor = (platform: string) => {
-    switch (platform) {
-      case "Qiita":
-        return "bg-green-100 text-green-800"
-      case "Zenn":
-        return "bg-blue-100 text-blue-800"
-      case "個人ブログ":
-        return "bg-purple-100 text-purple-800"
-      default:
-        return "bg-gray-100 text-gray-800"
-    }
-  }
-
-  const getCategoryColor = (category: string) => {
-    return category === "技術" ? "bg-blue-500" : "bg-pink-500"
-  }
-
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Articles</h1>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          技術記事やブログ投稿を通じて、学んだ知識や経験を共有しています。
-          技術的な内容から趣味に関する考察まで、幅広いトピックをお届けします。
-        </p>
       </div>
 
-      {/* Featured Articles */}
+      {/* No Articles Message */}
+      <div className="text-center py-16">
+        <BookOpen className="h-16 w-16 text-slate-300 mx-auto mb-6" />
+        <h2 className="text-2xl font-bold text-slate-700 mb-4">申し訳ありません。記事が投稿されていません。</h2>
+        <p className="text-slate-500 max-w-lg mx-auto">現在、記事を準備中です。もうしばらくお待ちください。</p>
+      </div>
+
+      {/* 
+      // 以下のコードはコメントアウトしておきます
+      // 記事データの準備ができたら、このコメントを外して使用できます
+      */}
+
+      {/*
+      const articles = [
+        {
+          id: 1,
+          title: "Next.js 14 の新機能とパフォーマンス最適化",
+          excerpt:
+            "Next.js 14 で導入された新機能と、実際のプロジェクトでのパフォーマンス最適化手法について詳しく解説します。",
+          date: "2024年2月15日",
+          readTime: "8分",
+          tags: ["Next.js", "React", "パフォーマンス"],
+          platform: "Qiita",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: true,
+          category: "技術",
+        },
+        {
+          id: 2,
+          title: "格闘ゲームから学ぶプログラミングの思考法",
+          excerpt: "格闘ゲームのコマンド入力や戦略的思考が、プログラミングスキルの向上にどのように役立つかを考察します。",
+          date: "2024年2月10日",
+          readTime: "6分",
+          tags: ["格闘ゲーム", "思考法", "プログラミング"],
+          platform: "個人ブログ",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: true,
+          category: "趣味",
+        },
+        {
+          id: 3,
+          title: "TypeScript で型安全な React アプリケーション開発",
+          excerpt:
+            "TypeScript を使用した React アプリケーション開発のベストプラクティスと、型安全性を保つためのテクニックを紹介。",
+          date: "2024年1月28日",
+          readTime: "12分",
+          tags: ["TypeScript", "React", "型安全性"],
+          platform: "Zenn",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: false,
+          category: "技術",
+        },
+        {
+          id: 4,
+          title: "漫画から学ぶストーリーテリングとUI設計",
+          excerpt: "漫画の構成やキャラクター設計から、ユーザーインターフェース設計に活かせる要素を探ります。",
+          date: "2024年1月20日",
+          readTime: "7分",
+          tags: ["漫画", "UI設計", "ストーリーテリング"],
+          platform: "個人ブログ",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: false,
+          category: "趣味",
+        },
+        {
+          id: 5,
+          title: "CSS Grid と Flexbox の使い分けガイド",
+          excerpt: "CSS Grid と Flexbox の特徴を理解し、適切な場面での使い分け方法を実例とともに解説します。",
+          date: "2024年1月10日",
+          readTime: "6分",
+          tags: ["CSS", "レイアウト", "フロントエンド"],
+          platform: "Qiita",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: false,
+          category: "技術",
+        },
+        {
+          id: 6,
+          title: "サッカー観戦で身につくチーム開発の視点",
+          excerpt: "サッカーの戦術分析から学ぶ、効果的なチーム開発とコミュニケーションの手法について。",
+          date: "2024年1月5日",
+          readTime: "5分",
+          tags: ["サッカー", "チーム開発", "コミュニケーション"],
+          platform: "個人ブログ",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: false,
+          category: "趣味",
+        },
+        {
+          id: 7,
+          title: "React Hooks の効果的な使い方",
+          excerpt: "useState、useEffect を始めとする React Hooks の効果的な使い方と、カスタムフックの作成方法について。",
+          date: "2023年12月20日",
+          readTime: "10分",
+          tags: ["React", "Hooks", "JavaScript"],
+          platform: "Zenn",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: false,
+          category: "技術",
+        },
+        {
+          id: 8,
+          title: "カラオケで鍛える表現力とプレゼンテーション",
+          excerpt: "カラオケでの歌唱体験が、技術プレゼンテーションや表現力向上にどう活かせるかを考察。",
+          date: "2023年12月15日",
+          readTime: "4分",
+          tags: ["カラオケ", "プレゼンテーション", "表現力"],
+          platform: "個人ブログ",
+          url: "#",
+          image: "/placeholder.svg?height=200&width=300",
+          featured: false,
+          category: "趣味",
+        },
+      ]
+
+      const featuredArticles = articles.filter((article) => article.featured)
+      const techArticles = articles.filter((article) => article.category === "技術" && !article.featured)
+      const hobbyArticles = articles.filter((article) => article.category === "趣味" && !article.featured)
+
+      const getPlatformColor = (platform: string) => {
+        switch (platform) {
+          case "Qiita":
+            return "bg-green-100 text-green-800"
+          case "Zenn":
+            return "bg-blue-100 text-blue-800"
+          case "個人ブログ":
+            return "bg-purple-100 text-purple-800"
+          default:
+            return "bg-gray-100 text-gray-800"
+        }
+      }
+
+      const getCategoryColor = (category: string) => {
+        return category === "技術" ? "bg-blue-500" : "bg-pink-500"
+      }
+
+      // Featured Articles Section
       <section className="mb-20">
         <h2 className="text-3xl font-bold text-slate-900 mb-12 flex items-center gap-3">
           <BookOpen className="h-8 w-8 text-blue-600" />
@@ -220,7 +228,7 @@ export default function Article() {
         </div>
       </section>
 
-      {/* Tech Articles */}
+      // Tech Articles Section
       <section className="mb-20">
         <h2 className="text-3xl font-bold text-slate-900 mb-12">技術記事</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -288,7 +296,7 @@ export default function Article() {
         </div>
       </section>
 
-      {/* Hobby Articles */}
+      // Hobby Articles Section
       <section className="mb-20">
         <h2 className="text-3xl font-bold text-slate-900 mb-12">趣味・ライフスタイル記事</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -356,7 +364,7 @@ export default function Article() {
         </div>
       </section>
 
-      {/* Call to Action */}
+      // Call to Action Section
       <section className="text-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-12">
         <h2 className="text-3xl font-bold text-slate-900 mb-4">もっと記事を読みたい方へ</h2>
         <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
@@ -384,6 +392,7 @@ export default function Article() {
           </a>
         </div>
       </section>
+      */}
     </div>
   )
 }

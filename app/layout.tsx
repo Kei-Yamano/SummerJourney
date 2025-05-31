@@ -11,8 +11,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Summer Journey - Creative Studio",
-  description: "A professional portfolio website showcasing creative works and technical expertise",
-    generator: 'v0.dev'
+  description: "山野夏のポートフォリオサイトです。",
+  generator: "v0.dev",
+  icons: {
+    icon: "/logo.png",
+  },
 }
 
 export default function RootLayout({
