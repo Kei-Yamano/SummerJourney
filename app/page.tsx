@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Sparkles, ArrowRight, ChevronDown } from "lucide-react"
+import { ArrowRight, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import RippleEffect from "./components/ripple-effect"
 
@@ -141,12 +141,6 @@ export default function Home() {
           </div>
 
           <div className="text-center space-y-6 md:space-y-8 relative z-10 max-w-4xl mx-auto">
-            <RippleEffect rippleColor="rgba(169, 169, 169, 0.4)" intensity="light" className="flex justify-center mb-6">
-              <div className="cursor-pointer p-2">
-                <Sparkles className="h-10 w-10 md:h-12 md:w-12 text-gray-500 animate-spin" />
-              </div>
-            </RippleEffect>
-
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 relative leading-tight">
               ようこそ Summer Journey へ
               <span className="absolute -top-1 -right-1 md:-top-2 md:-right-2 text-xl md:text-2xl animate-bounce">
@@ -196,10 +190,7 @@ export default function Home() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <RippleEffect rippleColor="rgba(59, 130, 246, 0.3)" intensity="light">
-              <div className="space-y-4 text-center cursor-pointer p-4 rounded-xl hover:bg-white/50 transition-all duration-300">
-                <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-white text-2xl">🚀</span>
-                </div>
+              <div className="space-y-4 text-center cursor-pointer p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border-l-4 border-blue-500 hover:bg-gradient-to-br hover:from-blue-100 hover:to-blue-200 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-slate-800">共感性の持った企画立案</h4>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   課題に対して、自分事としての視点を忘れず、企画立案・要件定義から携わる人材になりたい。
@@ -207,10 +198,7 @@ export default function Home() {
               </div>
             </RippleEffect>
             <RippleEffect rippleColor="rgba(168, 85, 247, 0.3)" intensity="light">
-              <div className="space-y-4 text-center cursor-pointer p-4 rounded-xl hover:bg-white/50 transition-all duration-300">
-                <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-white text-2xl">🎨</span>
-                </div>
+              <div className="space-y-4 text-center cursor-pointer p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border-l-4 border-purple-500 hover:bg-gradient-to-br hover:from-purple-100 hover:to-purple-200 transition-all duration-300">
                 <h4 className="text-lg font-semibold text-slate-800">面白いを探し続けられる場所で生きたい。</h4>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   業界に関わらず、面白いと感じる部分を大切にしたい。
@@ -218,12 +206,11 @@ export default function Home() {
               </div>
             </RippleEffect>
             <RippleEffect rippleColor="rgba(34, 197, 94, 0.3)" intensity="light">
-              <div className="space-y-4 text-center cursor-pointer p-4 rounded-xl hover:bg-white/50 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-white text-2xl">🌱</span>
-                </div>
+              <div className="space-y-4 text-center cursor-pointer p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-500 hover:bg-gradient-to-br hover:from-green-100 hover:to-green-200 transition-all duration-300 sm:col-span-2 lg:col-span-1">
                 <h4 className="text-lg font-semibold text-slate-800">チームと一緒に</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">共感性の持った面白さを追求するため、本当の主張ができるチーム開発に取り組みたい。</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  共感性の持った面白さを追求するため、本当の主張ができるチーム開発に取り組みたい。
+                </p>
               </div>
             </RippleEffect>
           </div>
