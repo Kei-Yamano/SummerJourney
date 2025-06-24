@@ -1,16 +1,19 @@
 import { Calendar, Clock, Tag, ArrowLeft, User } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { notFound } from "next/navigation"
+import { getArticleById, getAllArticleIds } from "@/lib/articles"
 
-export default function TextCommunicationResearchArticle() {
-  const article = {
-    title: "テキストコミュニケーションにおける褒め方の上手さを推定するモデルの精度分析",
-    date: "2024年8月~",
-    readTime: "12分",
-    tags: ["Python", "機械学習", "研究", "自然言語処理"],
-    thumbnail: "",
-    category: "研究",
-    author: "山野 夏",
+interface PageProps {
+  params: Promise<{ id: string }>
+}
+
+export default async function ArticlePage({ params }: PageProps) {
+  const { id } = await params
+  const article = getArticleById(id)
+
+  if (!article) {
+    notFound()
   }
 
   return (
@@ -85,53 +88,10 @@ export default function TextCommunicationResearchArticle() {
 
       {/* Article Content */}
       <div className="bg-white">
-        <div className="container px-4 py-12 md:px-6 max-w-4xl mx-auto">
-          <div className="prose prose-lg max-w-none">
-            {/* 
-              ここに記事の内容を書いてください。
-              以下はサンプルの構成です。実際の内容に置き換えてください。
-            */}
-
-            <h2>研究背景</h2>
-            <p>
-              {/* ここに研究背景について書いてください */}
-              現代社会において、自己肯定感の低下が深刻な問題となっています。この研究では、テキスト対話上での褒め方支援に注目しました。
-            </p>
-
-            <h2>研究目的</h2>
-            <p>
-              {/* ここに研究目的について書いてください */}
-              テキストコミュニケーションにおける褒め方の上手さを推定するモデルを構築し、その推定精度を分析することを目的としています。
-            </p>
-
-            <h2>研究手法</h2>
-            <p>
-              {/* ここに研究手法について書いてください */}
-              男女21組のペアにテキスト対話をしてもらい、そこから131の称賛データを収集し、
-              Python3を使用して、ランダムフォレストによる機械学習モデルを構築しました。
-            </p>
-
-            <h2>実験結果</h2>
-            <p>
-              {/* ここに実験結果について書いてください */}
-              対面での褒めを対象にした先行モデルには及ばない結果となりました。しかし、テキストコミュニケーションでは、対面での褒め以上に極性値による影響が大きいことが明らかになりました。
-            </p>
-
-            <h2>今後の課題</h2>
-            <p>
-              {/* ここに今後の課題について書いてください */}
-              文脈を加味した推定ができていないため、修士では称賛前後の文章も踏まえた上で、LLMを用いた特徴量の抽出を予定しております。
-            </p>
-
-            {/* 
-              記事の内容はここまでです。
-              上記のコメント部分に実際の内容を書き込んでください。
-            */}
-          </div>
-        </div>
+        <div className="container px-4 py-12 md:px-6 max-w-4xl mx-auto">{article.content}</div>
       </div>
 
-      {/* Related Articles or Back to Top */}
+      {/* Back to Articles */}
       <div className="bg-gray-50 py-12">
         <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
           <Link
@@ -144,4 +104,12 @@ export default function TextCommunicationResearchArticle() {
       </div>
     </div>
   )
+}
+
+// 静的生成のためのパス生成
+export async function generateStaticParams() {
+  const articleIds = getAllArticleIds()
+  return articleIds.map((id) => ({
+    id: id,
+  }))
 }

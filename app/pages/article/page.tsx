@@ -1,61 +1,11 @@
 import { BookOpen, Calendar, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { getAllArticles } from "@/lib/articles"
 
 export default function Article() {
-  // 記事データ - featuredプロパティを削除
-  const articles = [
-    {
-      id: "teruteru-tell-your-tale",
-      title: "てるてる～Tell Your Tale～ 開発記録",
-      excerpt: "イラストから物語を考える創造力と表現する文章力を養う2人用対戦ゲームの開発について詳しく解説します。",
-      date: "2023年8月15日",
-      readTime: "8分",
-      tags: ["Unity", "C#", "ゲーム開発", "チーム開発"],
-      thumbnail: "/teruteruHome.png",
-      category: "プロダクト",
-    },
-    {
-      id: "text-communication-research",
-      title: "テキストコミュニケーションにおける褒め方の上手さを推定するモデルの精度分析",
-      excerpt: "自己肯定感の低下問題に対して、テキスト対話上での褒め方支援に注目した研究について詳しく解説します。",
-      date: "2024年12月1日",
-      readTime: "12分",
-      tags: ["Python", "機械学習", "研究", "自然言語処理"],
-      thumbnail: "/digital.png",
-      category: "研究",
-    },
-    {
-      id: "pump-popup-memo-pad",
-      title: "PUMP -PopUp Memo Pad- 開発記録",
-      excerpt: "検索支援およびメモ機能を追加したChrome拡張機能の開発について詳しく解説します。",
-      date: "2025年2月10日",
-      readTime: "6分",
-      tags: ["HTML", "CSS", "JavaScript", "Chrome拡張機能"],
-      thumbnail: "/pump.png",
-      category: "プロダクト",
-    },
-    {
-      id: "hittan-save",
-      title: "ヒッタンセーブ 開発記録",
-      excerpt: "2人同時対戦の落ちもの×射的ゲームの開発について詳しく解説します。",
-      date: "2023年7月20日",
-      readTime: "5分",
-      tags: ["Java", "ゲーム開発", "2人対戦"],
-      thumbnail: "/HitAndSave.png",
-      category: "プロダクト",
-    },
-    {
-      id: "digital-signage-contest",
-      title: "和歌山大学学生挑戦コンテスト優秀賞獲得記録",
-      excerpt: "デジタルサイネージ導入提案で優秀賞を受賞した経験について詳しく解説します。",
-      date: "2024年12月15日",
-      readTime: "7分",
-      tags: ["デジタルサイネージ", "企画提案", "大学", "コンテスト"],
-      thumbnail: "/digital.png",
-      category: "受賞",
-    },
-  ]
+  // 記事データを自動取得
+  const articles = getAllArticles()
 
   return (
     <div className="container px-4 py-12 md:px-6 md:py-16 max-w-7xl mx-auto">
