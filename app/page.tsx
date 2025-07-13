@@ -26,8 +26,8 @@ export default function Home() {
   ]
 
   // 固定のキャッチコピー
-  const title = "面白いことを探したい。"
-  const subtitle = "自分事として捉えられ、共感できることを大切にしながら。"
+  const title = "自分事・責任感・面白がり力"
+  const subtitle = "巻き込むことと巻き込まれることを大切にしながら"
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -153,7 +153,7 @@ export default function Home() {
                 山野 夏です。格ゲーマです。
               </p>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                コマンドを覚えることに情熱を持つエンジニア志望の大学生です。Next.jsやReactを使ったウェブアプリケーション開発に興味をもち、このポートフォリオサイトを通じて自分の経歴やスキル、制作物を紹介しています。自身の面白いを表現し続けるために、学び続けています。
+                コマンドを覚えることに情熱を持つエンジニア志望の大学生です。Next.jsやReactを使ったウェブアプリケーション開発に興味をもち、また卒業研究ではデータ分析と機械学習にも取り組んできました。このポートフォリオサイトを通じて自分の経歴やスキル、制作物を紹介しています。
               </p>
             </div>
 
@@ -207,9 +207,9 @@ export default function Home() {
             </RippleEffect>
             <RippleEffect rippleColor="rgba(34, 197, 94, 0.3)" intensity="light">
               <div className="space-y-4 text-center cursor-pointer p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-500 hover:bg-gradient-to-br hover:from-green-100 hover:to-green-200 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                <h4 className="text-lg font-semibold text-slate-800">チームと一緒に</h4>
+                <h4 className="text-lg font-semibold text-slate-800">責任感</h4>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  共感性の持った面白さを追求するため、本当の主張ができるチーム開発に取り組みたい。
+                  頼まれたことに対しても，自らやると言ったことに対しても責任をもって最後までやり通す。
                 </p>
               </div>
             </RippleEffect>

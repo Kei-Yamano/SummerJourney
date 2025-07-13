@@ -139,47 +139,84 @@ export const articlesData: Record<string, ArticleData> = {
     date: "2025年2月10日",
     readTime: "6分",
     tags: ["HTML", "CSS", "JavaScript", "Chrome拡張機能"],
-    thumbnail: "/pump.png",
+    thumbnail: "/pump.png", // プロダクトページと同じ画像を使用
     category: "プロダクト",
     author: "山野 夏",
     content: (
       <div className="max-w-none text-slate-700 leading-relaxed">
+        {/* ここから記事の内容を書いてください */}
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">プロジェクト概要</h2>
         <p className="my-5 leading-7">
-          PUMPは検索支援およびメモ機能を追加したGoogle
-          Chrome拡張機能です。検索効率の向上と情報管理の最適化を目指して開発しました。
+          卒業研究などで，特定のキーワードで複数の文献を検索することが多いと思います．
+          そして後日同じキーワードで検索した際，どの文献が読み直したいものだったか，タイトルだけでは判別しにくいということが発生しがちでした．
+          この課題感を解決するため，検索タイトルに読み直す必要があるものには緑のライン，必要がないものには赤色のラインを表示し，マウスカーソルをタイトルに重ねると過去自分が残したメモがポップアップするという拡張機能をチームで開発しました．
+          また，その文献が必要であるか，やポップアップするメモを記入するためのウィンドウは，開いているwebページ上でショートカットキーを入力することで表示されるよう開発しました．
         </p>
 
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">開発背景</h2>
+        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">担当</h2>
         <p className="my-5 leading-7">
-          インターネット検索において、同じページを何度も訪問してしまう問題や、重要な情報を見つけても後で見つけられない問題を解決したいと考えました。
+          常にチーム内で互いに助け合いながらではありましたが，私は主に，メモを入力するウィンドウに必要な機能全般とUIを担当していました．
         </p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">主な機能</h2>
-        <p className="my-5 leading-7">PUMPには以下の主要機能があります：</p>
+        <p className="my-5 leading-7">{/* ここに主な機能の説明を書いてください */}</p>
         <ol className="list-decimal list-inside my-5 space-y-2 pl-4">
-          <li className="leading-7">検索したページにメモと必要性の評価を残す機能</li>
-          <li className="leading-7">次回検索以降、タイトルを見るだけで必要性が分かる表示機能</li>
-          <li className="leading-7">タイトルにカーソルを添えるとメモ内容が表示される機能</li>
+          <li className="leading-7">
+            alt + mキーを押すことで，開いているwebページに対して，メモと必要不要かどうか残すことが可能なウィンドウの表示
+          </li>
+          <li className="leading-7">
+            メモを残したwebページを振り返ることができるサイドメニュー
+          </li>
+          <li className="leading-7">
+            検索すると，検索タイトルに必要なページには緑の下線が，不要なページには赤の下線が表示，また検索タイトルにマウスカーソルを合わせることで，メモが表示
+          </li>
         </ol>
 
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">技術的な実装</h2>
-        <p className="my-5 leading-7">
-          HTML、CSS、JavaScriptを使用してChrome拡張機能として実装しました。特にメモ入力ウィンドウに関するアルゴリズムとUIの設計を担当しました。
-        </p>
+        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">実際の使用画面</h2>
+
+        <h3 className="text-2xl font-semibold text-slate-900 mt-10 mb-4 leading-tight">メモ入力画面</h3>
+        <div className="my-8">
+          <Image
+            src="/pumpInput.png"
+            alt="PUMP メモ入力画面"
+            width={800}
+            height={500}
+            className="w-full rounded-lg shadow-lg"
+          />
+          <p className="text-sm text-slate-600 mt-2 text-center italic">
+            表示されているウィンドウにメモを入力することができます．また自分にとって必要であるかどうかをボタンで残しておくことができます．
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-semibold text-slate-900 mt-10 mb-4 leading-tight">検索結果画面</h3>
+        <div className="my-8">
+          <Image
+            src="/pumpSearch.png"
+            alt="PUMP 検索結果画面"
+            width={800}
+            height={500}
+            className="w-full rounded-lg shadow-lg"
+          />
+          <p className="text-sm text-slate-600 mt-2 text-center italic">
+            必要であるボタンを押したwebページには緑の下線が，不要なものには赤の下線が表示されています．また検索タイトルにマウスカーソルを合わせることで，入力したメモが表示されます．
+          </p>
+        </div>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">開発で工夫した点</h2>
         <p className="my-5 leading-7">
-          ユーザビリティを重視し、直感的に操作できるインターフェースの設計に力を入れました。
+          自分たちがターゲット層だったこともあり，常にユーザ視点で必要な要素は何かを意識しながら，機能の決定をしていきました．また，チーム4人で開発進捗を定期的に共有し，コンフリクトといった問題が起こらないよう進めました．
         </p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">ハッカソンでの成果</h2>
         <p className="my-5 leading-7">
-          2025年2月のハッカソンで最優秀賞を受賞しました。実用的な機能と直感的なUIが評価されました。
+          サポーターズさんが主催の技育CAMPの一環であるハッカソンvol23にて，同期4人で参加し，検索支援およびメモ機能を追加したgoogleの拡張機能『PopUp Memo Pad』を発表し，最優秀賞をいただきました．
         </p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">今後の展望</h2>
-        <p className="my-5 leading-7">より多くのブラウザに対応し、機能の拡張を検討しています。</p>
+        <p className="my-5 leading-7">
+          キャッシュの問題を解決した後に，公開できるよう進めています．
+        </p>
+        {/* ここまで記事の内容 */}
       </div>
     ),
   },
@@ -242,60 +279,67 @@ export const articlesData: Record<string, ArticleData> = {
     date: "2024年12月15日",
     readTime: "7分",
     tags: ["デジタルサイネージ", "企画提案", "大学", "コンテスト"],
-    thumbnail: "/digital.png",
+    thumbnail: "/digital.png", // プロダクトページと同じ画像を使用
     category: "受賞",
     author: "山野 夏",
     content: (
       <div className="max-w-none text-slate-700 leading-relaxed">
+        {/* ここから記事の内容を書いてください */}
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">コンテスト概要</h2>
-        <p className="my-5 leading-7">
-          和歌山大学学生挑戦コンテストは、学生の革新的なアイデアと実現可能性を評価するコンテストです。2024年12月に開催されました。
-        </p>
+        <p className="my-5 leading-7">審査員に学長や企業が参加している，和歌山大学をより良くするためのアイデアコンテスト</p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">提案内容</h2>
         <p className="my-5 leading-7">
-          学内メールの問題と学内掲示板が活用されていない問題の両方を改善するため、大学内の情報発信を効率化するデジタルサイネージシステムの導入を提案しました。
+          デジタルサイネージによる学内広報のDX化
         </p>
 
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">課題の発見</h2>
-        <p className="my-5 leading-7">学内での情報伝達において以下の問題を発見しました：</p>
-        <ul className="list-disc list-inside my-5 space-y-2 pl-4">
-          <li className="leading-7">学内メールが読まれない</li>
-          <li className="leading-7">掲示板の情報が古い</li>
-          <li className="leading-7">重要な情報が埋もれてしまう</li>
-        </ul>
+        <div className="my-8">
+          <Image
+            src="/affect.png"
+            alt="大学が抱えている問題の現状"
+            width={800}
+            height={500}
+            className="w-full rounded-lg shadow-lg"
+          />
+          <p className="text-sm text-slate-600 mt-2 text-center italic">
+            私たちのチームでは，学生にとってメールの件名が見づらいこと，および全学生を対象とした必須メールの回答率が50％未満であることから，学内の情報伝達を効率化する必要があると考えました．さらに，学内掲示板の活用不足にも着目し、デジタルサイネージを用いた学内広報のDX化を提案しました。
+          </p>
+        </div>
 
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">解決策の提案</h2>
-        <p className="my-5 leading-7">
-          デジタルサイネージを学内の主要な場所に設置し、リアルタイムで情報を更新できるシステムを提案しました。
-        </p>
+        <div className="my-8">
+          <Image
+            src="/set.png"
+            alt="デジタルサイネージの設置位置候補"
+            width={800}
+            height={500}
+            className="w-full rounded-lg shadow-lg"
+          />
+          <p className="text-sm text-slate-600 mt-2 text-center italic">
+            {/* ここに設置位置図の説明を書いてください */}
+          </p>
+        </div>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">システムの特徴</h2>
-        <p className="my-5 leading-7">提案したシステムの主な特徴は以下の通りです：</p>
+        <p className="my-5 leading-7">{/* ここにシステムの特徴の説明を書いてください */}</p>
         <ol className="list-decimal list-inside my-5 space-y-2 pl-4">
-          <li className="leading-7">リアルタイム情報更新</li>
-          <li className="leading-7">視覚的に分かりやすい表示</li>
-          <li className="leading-7">緊急時の迅速な情報伝達</li>
-          <li className="leading-7">学生の関心を引く動的なコンテンツ</li>
+          <li className="leading-7">{/* 特徴1を書いてください */}</li>
+          <li className="leading-7">{/* 特徴2を書いてください */}</li>
+          <li className="leading-7">{/* 特徴3を書いてください */}</li>
+          <li className="leading-7">{/* 特徴4を書いてください */}</li>
         </ol>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">実現可能性の検討</h2>
-        <p className="my-5 leading-7">技術的な実現可能性、コスト面、運用面から詳細な検討を行いました。</p>
+        <p className="my-5 leading-7">{/* ここに実現可能性の検討内容を書いてください */}</p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">評価されたポイント</h2>
-        <p className="my-5 leading-7">
-          実現可能性と革新性が評価され、優秀賞を受賞することができました。特に学生目線での課題発見と具体的な解決策が評価されました。
-        </p>
+        <p className="my-5 leading-7">{/* ここに評価されたポイントを書いてください */}</p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">今後の展望</h2>
-        <p className="my-5 leading-7">
-          この提案を実際に大学に導入してもらえるよう、さらなる詳細設計と実証実験を検討しています。
-        </p>
+        <p className="my-5 leading-7">{/* ここに今後の展望を書いてください */}</p>
 
         <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6 leading-tight">学んだこと</h2>
-        <p className="my-5 leading-7">
-          課題発見から解決策の提案まで、一連のプロセスを通じて企画力と提案力を身につけることができました。
-        </p>
+        <p className="my-5 leading-7">{/* ここに学んだことを書いてください */}</p>
+        {/* ここまで記事の内容 */}
       </div>
     ),
   },
