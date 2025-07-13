@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
     "@radix-ui/react-slot": "^1.1.1",
+    "@tailwindcss/typography": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "latest",
@@ -18,7 +19,6 @@
     "next": "15.2.4",
     "react": "^19",
     "react-dom": "^19",
-    "shadcn": "latest",
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
